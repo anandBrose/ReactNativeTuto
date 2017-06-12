@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, TextInput, Button, Dimensions} from 'react-nati
 
 const styles = StyleSheet.create({
   inputComponent: {
-    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height-25,
     padding:5
   },
   topPadding:{
@@ -30,10 +30,10 @@ export class MyInput extends Component{
   render (){
     return (
       <View style={styles.inputComponent}>
-        <TextInput style={{flex:1}} value={this.state.text} placeholder="Type here, Take a Break inbetween" 
+        <TextInput style={{width:"100%",height:50}} value={this.state.text} placeholder="Type here, Take a Break inbetween" 
           onChangeText={(text)=>{ this.setState({text})}}></TextInput>
-        <Text style={{flex:1}}>{this.state.text.split(" ").join('<Space>')}</Text>
-        <Button style={styles.topPadding} onPress={this.onClick} title="Have some pizza"></Button>
+        <Text style={{height:'auto'}}>{this.state.text.split(" ").join('<Space>')}</Text>
+        <Button onPress={this.onClick} title="Have some pizza"></Button>
       </View>
     )
   };

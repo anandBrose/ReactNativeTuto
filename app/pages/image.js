@@ -4,7 +4,7 @@ import { Image, Text, View, StyleSheet, ScrollView, Dimensions} from 'react-nati
 
 const styles = StyleSheet.create({
   imageComponent:{
-    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height-25,
   },
   imageSize: {
     height: 100,
@@ -18,7 +18,7 @@ export class MyImage extends Component{
     this.state = {colorIt : true};
     setInterval(() => {
       this.setState((previousState)=>{
-        previousState.colorIt = !!previousState.colorIt;
+        previousState.colorIt = !previousState.colorIt;
         return previousState;
       });
     },1000);
